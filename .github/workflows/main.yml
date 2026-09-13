@@ -1,0 +1,21 @@
+name: Continuous Delivery
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Simulando o Build
+        run: echo "Build realizado com sucesso!"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulando o Deploy
+        run: echo "Deploy realizado com sucesso!"
